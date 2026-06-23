@@ -10,13 +10,20 @@ const { preTitle, title, href="#" } = Astro.props;
 const isActive = Astro.url.pathname.startsWith(href);
 console.log(Astro.url.pathname)
 ---
-<li class={ isActive ? "active" : "" }>
-    <a href={href}>
-        <span>{preTitle}</span>
-        <span>{title}</span>
-    </a>
-    <div class="dot"></div>
-</li>
+<!-- 프레그먼트 -->
+
+<Fragment>
+    <li class={ isActive ? "active" : "" }>
+        <a href={href}>
+            <slot name="pre-title" />
+            <span>{preTitle}</span>
+            <slot name="mid-title" />
+            <span>{title}</span>
+            <slot />
+        </a>
+        <div class="dot"></div>
+    </li>
+</Fragment>
 <style>
     li{
         position: relative;
