@@ -7,8 +7,10 @@
 	},
 	"scripts": {
 		"dev": "astro dev",
+		"clean": "if exist dist rmdir /s /q dist && if exist dist-php rmdir /s /q dist-php",
 		"prebuild": "astro check && eslint \"./src/**/*.astro\" && prettier . --write",
 		"build": "astro build",
+		"postbuild": "node ./scripts/to-php.js",
 		"preview": "astro preview",
 		"astro": "astro",
 		"hi234": "echo \"안녕하세요 스크립트 입니다\""
