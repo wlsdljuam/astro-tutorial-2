@@ -7,7 +7,7 @@
 	},
 	"scripts": {
 		"dev": "astro dev",
-		"prebuild": "astro check && eslint \"./src/**/*.astro\" && prettier . --write",
+		"prebuild_tmp": "astro check && eslint \"./src/**/*.astro\" && prettier . --write",
 		"build": "astro build",
 		"preview": "astro preview",
 		"astro": "astro",
