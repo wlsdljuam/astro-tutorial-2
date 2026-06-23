@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "eslint \"./src/**/*.astro\" && astro build",
+    "build": "astro check && eslint \"./src/**/*.astro\" && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "hi234": "echo \"안녕하세요 스크립트 입니다\""
