@@ -1,0 +1,50 @@
+---
+interface Props {
+	code: string;
+	label?: string;
+}
+
+const { code, label } = Astro.props;
+const isDev = import.meta.env.DEV;
+const displayLabel = label || code.trim();
+---
+
+{
+	isDev ? (
+		<span class="php-badge" title={code}>
+			<span class="php-tag">PHP</span>
+			<span class="php-label">{displayLabel}</span>
+		</span>
+	) : (
+		<Fragment set:html={`${code}`} />
+	)
+}
+
+<style>
+	.php-badge {
+		white-space: pre;
+		display: inline-flex;
+		align-items: center;
+		gap: 4px;
+		border: 1px dashed #8b5cf6;
+		border-radius: 4px;
+		padding: 2px 8px;
+		background: rgba(139, 92, 246, 0.08);
+		font-size: 12px;
+	}
+
+	.php-tag {
+		background: #8b5cf6;
+		color: #fff;
+		font-size: 10px;
+		font-weight: 700;
+		padding: 1px 5px;
+		border-radius: 3px;
+	}
+
+	.php-label {
+		color: #8b5cf6;
+		font-family: monospace;
+		font-size: 11px;
+	}
+</style>

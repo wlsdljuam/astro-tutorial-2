@@ -1,5 +1,6 @@
 ---
 import "../css/debug.css";
+import PHPCode from "../componemts/PHPCode.astro";
 ---
 
 <html lang="en">
@@ -14,9 +15,24 @@ import "../css/debug.css";
 	<body>
 		<h1 debug="blue">Astro</h1>
 
-		<span>여기는 PHP코드가 들어갈 자리 입니다.</span>
-		<Fragment
+		<!-- <span>여기는 PHP코드가 들어갈 자리 입니다.</span> -->
+		<!-- <Fragment
 			set:html={`<?php echo "PHP가 실행중입니다. : " . date('Y-m-d H:i:s'); ?>`}
 		/>
+        <div>{10 + 20}</div> -->
+		<div>
+			<PHPCode
+				code={`<?php if ($is_member) {  ?>
+            <li><a href="<?php echo G5_BBS_URL ?>/member_confirm.php?url=<?php echo G5_BBS_URL ?>/register_form.php">정보수정</a></li>
+            <li><a href="<?php echo G5_BBS_URL ?>/logout.php">로그아웃</a></li>
+            <?php if ($is_admin) {  ?>
+            <li class="tnb_admin"><a href="<?php echo correct_goto_url(G5_ADMIN_URL); ?>">관리자</a></li>
+            <?php }  ?>
+            <?php } else {  ?>
+            <li><a href="<?php echo G5_BBS_URL ?>/register.php">회원가입</a></li>
+            <li><a href="<?php echo G5_BBS_URL ?>/login.php">로그인</a></li>
+            <?php }  ?>`}
+			/>
+		</div>
 	</body>
 </html>
