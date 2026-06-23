@@ -1,8 +1,7 @@
 ---
-import "../css/debug.css"
+import "../css/debug.css";
 import NavTypeB from "../componemts/navs/NavType_B.astro";
-const rawHTMLString = "Hello <strong>World</strong>"
-
+const rawHTMLString = "Hello <strong>World</strong>";
 ---
 
 <html lang="en">
@@ -15,14 +14,13 @@ const rawHTMLString = "Hello <strong>World</strong>"
 		<title>Astro</title>
 	</head>
 	<body>
-
 		<h1 debug="blue">Astro</h1>
-        <NavTypeB />
-        <div debug>
-            <h1>{rawHTMLString}</h1>
-  <!-- 출력 결과: <h1>Hello &lt;strong&gt;World&lt;/strong&gt;</h1> -->
-<h1 set:html={rawHTMLString} />
-  <!-- 출력 결과: <h1>Hello <strong>World</strong></h1> -->
-        </div>
+		<NavTypeB />
+		<div debug>
+			<h1>{rawHTMLString}</h1>
+			<!-- 출력 결과: <h1>Hello &lt;strong&gt;World&lt;/strong&gt;</h1> -->
+			<h1 set:html={rawHTMLString} />
+			<!-- 출력 결과: <h1>Hello <strong>World</strong></h1> -->
+		</div>
 	</body>
 </html>

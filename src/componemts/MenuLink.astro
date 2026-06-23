@@ -1,62 +1,60 @@
 ---
 //TypeScript
-interface Props{
-    preTitle: string;
-    title: string;
-    href?: string;
-    classsName?:string;
+interface Props {
+	preTitle: string;
+	title: string;
+	href?: string;
+	classsName?: string;
 }
-const { preTitle, title, href="#", classsName } = Astro.props;
+const { preTitle, title, href = "#", classsName } = Astro.props;
 
 const isActive = Astro.url.pathname.startsWith(href);
-console.log(Astro.url.pathname)
+console.log(Astro.url.pathname);
 ---
-<!-- 프레그먼트 -->
 
+<!-- 프레그먼트 -->
 <Fragment>
-    <!-- <li class={ isActive ? "active" : "" }> -->
-     <li class:list={ [isActive ? "active" : "", "aaa", "bbb" , classsName] }>
-        <a href={href}>
-            <slot name="pre-title" />
-            <span>{preTitle}</span>
-            <slot name="mid-title" />
-            <span>{title}</span>
-            <slot />
-        </a>
-        <div class="dot"></div>
-    </li>
+	<!-- <li class={ isActive ? "active" : "" }> -->
+	<li class:list={[isActive ? "active" : "", "aaa", "bbb", classsName]}>
+		<a href={href}>
+			<slot name="pre-title" />
+			<span>{preTitle}</span>
+			<slot name="mid-title" />
+			<span>{title}</span>
+			<slot />
+		</a>
+		<div class="dot"></div>
+	</li>
 </Fragment>
 <style>
-    li{
-        position: relative;
-        border-bottom: 3px solid transparent;
-    }
-    li.active{
-        border-bottom: 3px solid #000;
-    }
-    a{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0px 10px ;
-        text-decoration: none;
-        color: black;
-        
-    }
-    a span:first-child{
-        font-weight: 300;
-
-    }
-    a span:last-child{
-        font-weight: bold;
-    }
-    .dot{
-        width: 3px;
-        height: 3px;
-        background-color: red;
-        border-radius: 100%;
-        position: absolute;
-        right: -5px;
-        top: -5px;
-    }
+	li {
+		position: relative;
+		border-bottom: 3px solid transparent;
+	}
+	li.active {
+		border-bottom: 3px solid #000;
+	}
+	a {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 0px 10px;
+		text-decoration: none;
+		color: black;
+	}
+	a span:first-child {
+		font-weight: 300;
+	}
+	a span:last-child {
+		font-weight: bold;
+	}
+	.dot {
+		width: 3px;
+		height: 3px;
+		background-color: red;
+		border-radius: 100%;
+		position: absolute;
+		right: -5px;
+		top: -5px;
+	}
 </style>

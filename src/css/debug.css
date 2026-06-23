@@ -1,34 +1,33 @@
-
 /* 개별 요소 디버깅: <div debug> */
 [debug] {
-    outline: 2px solid red !important;
+	outline: 2px solid red !important;
 }
 
 [debug="blue"] {
-    outline: 2px solid blue !important;
+	outline: 2px solid blue !important;
 }
 
 [debug="green"] {
-    outline: 2px solid green !important;
+	outline: 2px solid green !important;
 }
 
 [debug="orange"] {
-    outline: 2px solid orange !important;
+	outline: 2px solid orange !important;
 }
 
 /* 전체 레이아웃 디버깅: <body debug-all> */
 [debug-all] {
-    outline: 2px solid rgba(255, 0, 0, 0.5) !important;
+	outline: 2px solid rgba(255, 0, 0, 0.5) !important;
 }
 
 [debug-all] * {
-    outline: 1px solid rgba(255, 0, 0, 0.3) !important;
+	outline: 1px solid rgba(255, 0, 0, 0.3) !important;
 }
 
 [debug-all] * * {
-    outline: 1px solid rgba(0, 0, 255, 0.3) !important;
+	outline: 1px solid rgba(0, 0, 255, 0.3) !important;
 }
 
 [debug-all] * * * {
-    outline: 1px solid rgba(0, 128, 0, 0.3) !important;
+	outline: 1px solid rgba(0, 128, 0, 0.3) !important;
 }
