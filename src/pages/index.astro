@@ -1,7 +1,5 @@
 ---
 import "../css/debug.css";
-import NavTypeB from "../componemts/navs/NavType_B.astro";
-const rawHTMLString = "Hello <strong>World</strong>";
 ---
 
 <html lang="en">
@@ -15,13 +13,10 @@ const rawHTMLString = "Hello <strong>World</strong>";
 	</head>
 	<body>
 		<h1 debug="blue">Astro</h1>
-		<NavTypeB />
-		<div debug>
-			<h1>{rawHTMLString}</h1>
-			<!-- 출력 결과: <h1>Hello &lt;strong&gt;World&lt;/strong&gt;</h1> -->
-			<h1 set:html={rawHTMLString} />
-			<!-- 출력 결과: <h1>Hello <strong>World</strong></h1> -->
-		</div>
-		<img src="https://picsum.photos/id/1/200/300" alt="임시이미지" />
+
+		<span>여기는 PHP코드가 들어갈 자리 입니다.</span>
+		<Fragment
+			set:html={`<?php echo "PHP가 실행중입니다. : " . date('Y-m-d H:i:s'); ?>`}
+		/>
 	</body>
 </html>

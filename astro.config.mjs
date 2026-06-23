@@ -11,7 +11,4 @@ export default defineConfig({
 		assets: "assets",
 	},
 	scopedStyleStrategy: "class", // css 선택자 규칙을 class name 기반으로 출력
-	image: {
-		responsiveStyles: false,
-	},
 });
